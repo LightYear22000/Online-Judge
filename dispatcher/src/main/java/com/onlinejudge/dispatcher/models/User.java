@@ -1,23 +1,23 @@
 package com.onlinejudge.dispatcher.models;
 
-
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-public class Problem {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long pid;
+    @Column(name="user_id")
+    private Long uid;
 
     @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
-    private int timeLimit;
+    private String handle;
 
     @Column(nullable = false)
-    private short memoryLimit;
+    private String password;
 }
