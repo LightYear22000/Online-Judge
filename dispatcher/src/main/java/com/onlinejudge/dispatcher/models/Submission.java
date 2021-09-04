@@ -15,7 +15,7 @@ public class Submission {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private EndUser endUser;
 
     @Column(nullable = false)
     private Date timeStamp;
@@ -31,4 +31,5 @@ public class Submission {
 
     @Column(nullable = false)
     private int memoryUsage;
+
 }

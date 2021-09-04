@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/api")
 public class DispatcherController {
@@ -17,7 +19,8 @@ public class DispatcherController {
 
     @GetMapping("/submission")
     @ResponseBody
-    Submission getSubmission(@RequestParam Long sid) {
+    Optional<Submission> getSubmission(@RequestParam Long sid) {
         return submissionHandler.getSubmissionById(sid);
     }
+
 }

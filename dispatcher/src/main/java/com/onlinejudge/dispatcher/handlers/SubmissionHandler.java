@@ -1,17 +1,19 @@
 package com.onlinejudge.dispatcher.handlers;
 
 import com.onlinejudge.dispatcher.models.Submission;
+import com.onlinejudge.dispatcher.repositories.SubmissionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 public class SubmissionHandler {
 
-    public Submission getSubmissionById(Long id) {
-        Submission submission = new Submission();
-        for(int i = 0; i <  1000000; i++) {
-            i++;
-            id++;
-        }
-        return submission;
+    @Autowired
+    private SubmissionRepository submissionRepository;
+
+    public Optional<Submission> getSubmissionById(Long id) {
+        return submissionRepository.findById(id);
     }
 }
