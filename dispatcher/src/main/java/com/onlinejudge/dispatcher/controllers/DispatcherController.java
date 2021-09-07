@@ -27,10 +27,7 @@ public class DispatcherController {
     @PostMapping("/submission")
     @ResponseBody
     public Submission postSubmission(@RequestBody Submission userSubmission) {
-        System.out.println(userSubmission);
         return submissionHandler.createNewSubmission(userSubmission);
-        // rabbitTemplate.convertAndSend(exchange, "", str);
-        // return str;
     }
 
     @GetMapping("/submission")

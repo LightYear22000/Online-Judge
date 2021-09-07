@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
     @RabbitListener(queues = "${dispatcher.rabbitmq.queue.name}")
-    public void consumeMessageFromQueue(String str) {
+    public void consumeMessageFromQueue(Long str) {
         System.out.print(str + " Inside consumeMessageFromQueue");
     }
 

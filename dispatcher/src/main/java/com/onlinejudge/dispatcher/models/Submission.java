@@ -1,6 +1,7 @@
 package com.onlinejudge.dispatcher.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Submission {
     private Long sid;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private EndUser endUser;
 
