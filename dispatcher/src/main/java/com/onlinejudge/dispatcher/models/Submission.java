@@ -18,6 +18,9 @@ public class Submission {
     private EndUser endUser;
 
     @Column(nullable = false)
+    private String code;
+
+    @Column(nullable = false)
     private Date timeStamp;
 
     @Column(nullable = false)

@@ -26,10 +26,11 @@ public class DispatcherController {
 
     @PostMapping("/submission")
     @ResponseBody
-    public String postSubmission(@RequestParam String str) {
-        System.out.println("Inside PostSubmission" + " " + "${dispatcher.rabbitmq.exchange.name}");
-        rabbitTemplate.convertAndSend(exchange, "", str);
-        return str;
+    public Submission postSubmission(@RequestBody Submission userSubmission) {
+        System.out.println(userSubmission);
+        return submissionHandler.createNewSubmission(userSubmission);
+        // rabbitTemplate.convertAndSend(exchange, "", str);
+        // return str;
     }
 
     @GetMapping("/submission")
