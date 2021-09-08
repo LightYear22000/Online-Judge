@@ -26,7 +26,7 @@ public class DispatcherController {
 
     @PostMapping("/submission")
     @ResponseBody
-    public Submission postSubmission(@RequestBody Submission userSubmission) {
+    public Submission postSubmission(@RequestBody Submission userSubmission) throws Exception {
         return submissionHandler.createNewSubmission(userSubmission);
     }
 

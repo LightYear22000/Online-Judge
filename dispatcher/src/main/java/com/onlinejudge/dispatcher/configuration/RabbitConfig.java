@@ -19,16 +19,15 @@ import org.springframework.messaging.handler.annotation.support.DefaultMessageHa
 @Configuration
 @PropertySource("classpath:config.properties")
 public class RabbitConfig implements RabbitListenerConfigurer {
-    @Value("${dispatcher.rabbitmq.queue.name}")
-    private String queueName;
+    @Value("${dispatcher.rabbitmq.queue.java-name}")
+    private String javaQueueName;
 
     @Value("${dispatcher.rabbitmq.exchange.name}")
     private String exchangeName;
 
     @Bean
-    Queue queue() {
-        System.out.println("Inside Queue");
-        return new Queue(queueName, true);
+    Queue javaQueue() {
+        return new Queue(javaQueueName, true);
     }
 
     @Bean
