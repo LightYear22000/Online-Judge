@@ -19,5 +19,11 @@ public class Problem {
     private int timeLimit;
 
     @Column(nullable = false)
+    private String input;
+
+    @Column(nullable = false)
+    private String output;
+
+    @Column(nullable = false)
     private short memoryLimit;
 }
