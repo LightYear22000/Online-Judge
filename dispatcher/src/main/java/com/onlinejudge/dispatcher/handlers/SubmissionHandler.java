@@ -27,6 +27,7 @@ public class SubmissionHandler {
     public Optional<Submission> getSubmissionById(Long id) {
         return submissionRepository.findById(id);
     }
+
     public Submission createNewSubmission(Submission userSubmission) throws Exception {
         Submission submission =  submissionRepository.save(userSubmission);
         ObjectMapper objectMapper = new ObjectMapper();

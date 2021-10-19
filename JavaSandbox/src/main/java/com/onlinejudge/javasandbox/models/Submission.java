@@ -18,6 +18,8 @@ public class Submission {
 
     private Long sid;
 
+    private Long pid;
+
     private String code;
 
     private Date timeStamp;

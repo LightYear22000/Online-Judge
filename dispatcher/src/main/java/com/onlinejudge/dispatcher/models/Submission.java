@@ -19,6 +19,9 @@ public class Submission {
     @JoinColumn(name = "user_id")
     private EndUser endUser;
 
+    @JsonIgnore
+    private Long pid;
+
     @Column(nullable = false)
     private String code;
 
